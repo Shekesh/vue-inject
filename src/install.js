@@ -76,7 +76,10 @@ module.exports = function (Vue, options) {
       }
       if (options.components) {
         resolveToTarget(this.$options.components, this.$options.components, named);
-      }
+	  }
+	if (options.properties) {
+		resolveToTarget(this.$options._propKeys, this.$options.propsData, named);
+	}
       if (options.mixins) {
         resolveToTarget(this.$options.mixins, this.$options.mixins, named);
       }
